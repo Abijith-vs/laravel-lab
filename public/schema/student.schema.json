@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Student",
+  "type": "object",
+  "properties": {
+    "id":      { "type": "integer" },
+    "name":    { "type": "string" },
+    "roll_no": { "type": "string" }
+  },
+  "required": ["name", "roll_no"]
+}

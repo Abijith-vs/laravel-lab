@@ -23,7 +23,7 @@
 
     <div class="box">
         <strong>The database is ready:</strong>
-        the <code>students</code> table has {{ \App\Models\Student::count() }} sample rows.
+        the <code>students</code> table has {{ $studentCount }} sample rows.
     </div>
 </body>
 </html>
