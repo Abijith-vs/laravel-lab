@@ -30,9 +30,9 @@ class DatabaseSeeder extends Seeder
         }
 
         // Your own entry, added once, after the loop
-        Student::create([
+                Student::create([
             'roll_no'    => '1',
-            'name'       => 'Abijith V S',
+            'name'       => 'Abijith vs',
             'email'      => 'abijithvsdev@gmail.com',
             'department' => 'CSE',
             'semester'   => 7,
