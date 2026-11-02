@@ -18,10 +18,10 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      */
-    public function boot(): void
-    {
-        Route::bind('student_roll', function ($value) {
-    return Student::where('roll_no', $value)->firstOrFail();
-});
-    }
+   public function boot(): void
+{
+    Route::bind('roll', function ($value) {
+        return Student::where('roll_no', $value)->firstOrFail();
+    });
+}
 }

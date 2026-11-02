@@ -3,9 +3,13 @@
   "title": "Student",
   "type": "object",
   "properties": {
-    "id":      { "type": "integer" },
-    "name":    { "type": "string" },
-    "roll_no": { "type": "string" }
+    "id":         { "type": "integer" },
+    "roll_no":    { "type": "string" },
+    "name":       { "type": "string" },
+    "email":      { "type": "string" },
+    "department": { "type": ["string", "null"] },
+    "semester":   { "type": ["integer", "null"] },
+    "cgpa":       { "type": ["number", "null"] }
   },
-  "required": ["name", "roll_no"]
+  "required": ["name", "roll_no", "email"]
 }

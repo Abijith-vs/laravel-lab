@@ -6,15 +6,15 @@ use Illuminate\Support\Facades\Route;
 
 // A
 Route::get('/', [PageController::class, 'home']);
-Route::get('/hello/{name}', fn ($name) => "Hello, $name");
+Route::get('/hello/{name}', fn ($name) => view('hello', ['name' => $name]));
 Route::get('/about', [PageController::class, 'about']);
 
 // B
 Route::resource('students', StudentController::class);
 
-// C (explicit binding)
-Route::get('/roll/{student_roll}', fn (Student $student_roll) =>
-    view('students.show', ['student' => $student_roll]));
+// C (explicit binding, defined in AppServiceProvider)
+Route::get('/roll/{roll}', fn (Student $roll) =>
+    view('students.show', ['student' => $roll]));
 
 // E
 Route::get('/api/students', fn () => response()->json(Student::all()));

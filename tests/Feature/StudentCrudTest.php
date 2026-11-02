@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Models\Student;
 use Database\Seeders\DatabaseSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -55,6 +56,23 @@ class StudentCrudTest extends TestCase
     public function test_missing_student_returns_not_found(): void
     {
         $this->get('/students/999999')->assertNotFound();
+    }
+
+    public function test_student_can_be_found_by_roll_number_or_id(): void
+    {
+        $student = Student::create([
+            'roll_no' => 'CS24-08',
+            'name' => 'Akshara R',
+            'email' => 'akshara@example.com',
+        ]);
+
+        $this->get('/roll/CS24-08')
+            ->assertOk()
+            ->assertSeeText('Akshara R');
+
+        $this->get('/roll/' . $student->id)
+            ->assertOk()
+            ->assertSeeText('Akshara R');
     }
 
     public function test_students_api_returns_a_json_array(): void
