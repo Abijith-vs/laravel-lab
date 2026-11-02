@@ -31,12 +31,12 @@ class DatabaseSeeder extends Seeder
 
         // Your own entry, added once, after the loop
                 Student::create([
-            'roll_no'    => 'NSS23CS001',
+            'roll_no'    => '1',
             'name'       => 'Abijith vs',
             'email'      => 'abijithvsdev@gmail.com',
             'department' => 'CSE',
             'semester'   => 7,
-            'cgpa'       => 7.48,
+            'cgpa'       => null,
         ]);
     }
 }
